@@ -362,6 +362,11 @@ body {
   justify-content: center;
 }
 
+.playlist-card iframe {
+  margin: 8px 0;
+  border-radius: 12px !important;
+}
+
 .playlist-label {
   font-size: 0.85rem;
   text-transform: uppercase;
