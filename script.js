@@ -114,3 +114,49 @@ playlistToggle.addEventListener("click", () => {
 });
 
 updateJarAndCount();
+
+// Custom Spotify-style player
+const customAudio = document.getElementById("customAudio");
+const playBtn = document.getElementById("playBtn");
+const progressSlider = document.getElementById("progressSlider");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+
+// Start at 2:50 (170 seconds)
+const startTime = 170;
+
+const formatTime = (seconds) => {
+  if (!seconds || !isFinite(seconds)) return "0:00";
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${String(secs).padStart(2, "0")}`;
+};
+
+customAudio.addEventListener("loadedmetadata", () => {
+  customAudio.currentTime = startTime;
+  progressSlider.max = customAudio.duration;
+  durationEl.textContent = formatTime(customAudio.duration);
+});
+
+customAudio.addEventListener("timeupdate", () => {
+  progressSlider.value = customAudio.currentTime;
+  currentTimeEl.textContent = formatTime(customAudio.currentTime);
+});
+
+playBtn.addEventListener("click", () => {
+  if (customAudio.paused) {
+    customAudio.play();
+    playBtn.textContent = "⏸";
+  } else {
+    customAudio.pause();
+    playBtn.textContent = "▶";
+  }
+});
+
+progressSlider.addEventListener("input", (e) => {
+  customAudio.currentTime = e.target.value;
+});
+
+customAudio.addEventListener("ended", () => {
+  playBtn.textContent = "▶";
+});
