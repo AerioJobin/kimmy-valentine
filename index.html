@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiet Magic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <audio id="wishlistAudio" src="audio/wishlist.mp3" loop></audio>
+
+  <main class="page">
+    <section class="hero reveal">
+      <button class="tulip-btn" id="tulipBtn" aria-label="Bloom the tulip">
+        <svg class="tulip" viewBox="0 0 120 140" aria-hidden="true" focusable="false">
+          <path class="petal" d="M60 15c-18 6-32 28-32 52 0 25 14 44 32 44s32-19 32-44c0-24-14-46-32-52Z" />
+          <path class="petal" d="M30 40c-12 8-18 24-18 40 0 18 10 30 22 30 10 0 18-8 22-20-18-8-26-28-26-50Z" />
+          <path class="petal" d="M90 40c12 8 18 24 18 40 0 18-10 30-22 30-10 0-18-8-22-20 18-8 26-28 26-50Z" />
+          <path class="stem" d="M60 85c0 18-2 36-4 48" />
+          <path class="leaf" d="M56 105c-18-2-28 6-34 18 16 2 28-2 36-10" />
+          <path class="leaf" d="M64 105c18-2 28 6 34 18-16 2-28-2-36-10" />
+        </svg>
+      </button>
+      <p class="audio-hint" id="audioHint" role="status" aria-live="polite"></p>
+
+      <h1 class="hero-title">Quiet Magic</h1>
+      <p class="hero-subtitle">For the girl who makes the world stand still.</p>
+
+      <div class="timer-card" id="timerCard">
+        <div class="timer-label">Time since June 30, 2025 · 2:40 AM</div>
+        <div id="timer" class="timer-value">Counting our moments...</div>
+      </div>
+    </section>
+
+    <section class="gallery-section reveal">
+      <h2 class="section-title">Our Favorite Chapters</h2>
+      <div class="gallery">
+        <figure class="polaroid p1">
+          <img src="images/kimmy-01.jpg" alt="I admire the way your mind works." />
+          <figcaption>I admire the way your mind works.</figcaption>
+        </figure>
+        <figure class="polaroid p2">
+          <img src="images/kimmy-02.jpg" alt="You are the peace I didn’t know I needed." />
+          <figcaption>You are the peace I didn’t know I needed.</figcaption>
+        </figure>
+        <figure class="polaroid p3">
+          <img src="images/kimmy-03 (1).jpg" alt="The prettiest kind of quiet." />
+          <figcaption>The prettiest kind of quiet.</figcaption>
+        </figure>
+        <figure class="polaroid p4">
+          <img src="images/kimmy-03 (2).jpg" alt="My favorite view, always." />
+          <figcaption>My favorite view, always.</figcaption>
+        </figure>
+        <figure class="polaroid p5">
+          <img src="images/kimmy-03 (3).jpg" alt="My favorite kind of quiet." />
+          <figcaption>My favorite kind of quiet.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="letter-section reveal">
+      <div class="letter-box">
+        <div class="letter-flourish" aria-hidden="true"></div>
+        <p class="letter-text">
+Dear Kimmy,
+
+Happy Valentine's Day to the girl who still gives me butterflies every single time I see her.
+
+I wanted to slow down today and really tell you how much you mean to me, because life moves fast and sometimes I forget to say the things I feel every day. It's the little things that stay with me the way your face changes when you're genuinely laughing, how you somehow always know what to say when my day has been heavy, and how even the quiet, do-nothing moments feel special just because they're with you.
+
+You're my best friend, my babi boo, and without a doubt the best part of my day...every day. I don't just love you for who you are; I love who I become when I'm with you. You make me want to grow, while also making me feel like I'm already enough just as I am.
+
+I hope today reminds you, even a little, of how loved and cherished you are not just today, but always. I'm so grateful that I get to hold your hand, laugh with you, and choose you every day.
+
+I love you tons, babi boo.
+Happy Valentine's Day
+        </p>  
+        <span class="to-be-continued"><strong>To be continued...</strong></span>
+        <div class="letter-tulip" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
