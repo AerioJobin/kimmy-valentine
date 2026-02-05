@@ -519,6 +519,26 @@ body {
   }
 }
 
+.floating-heart {
+  position: absolute;
+  font-size: 2rem;
+  color: var(--soft-pink);
+  pointer-events: none;
+  top: 50%;
+  will-change: transform, opacity;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) translateX(20px) scale(0.5);
+    opacity: 0;
+  }
+}
+
 @keyframes heartFloat {
   0% {
     transform: translateY(0) scale(1) rotate(45deg);

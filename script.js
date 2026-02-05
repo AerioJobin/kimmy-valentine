@@ -61,3 +61,56 @@ const observer = new IntersectionObserver(
 );
 
 revealEls.forEach((el) => observer.observe(el));
+
+// Wishes functionality
+const wishJarCard = document.getElementById("wishJarCard");
+const jarFill = document.getElementById("jarFill");
+const wishCount = document.getElementById("wishCount");
+const playlistToggle = document.getElementById("playlistToggle");
+const playlistTip = document.getElementById("playlistTip");
+
+const playlistTips = [
+  "A soft song that feels like your hug.",
+  "Music for the quiet moments we love.",
+  "Every note reminds me of you.",
+  "Our soundtrack, playing just for us."
+];
+
+let currentTipIndex = 0;
+let wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+
+const updateJarAndCount = () => {
+  const percentage = Math.min((wishes.length / 100) * 100, 100);
+  jarFill.style.height = percentage + "%";
+  wishCount.textContent = wishes.length;
+};
+
+const addWish = () => {
+  wishes.push({ id: Date.now(), created: new Date() });
+  localStorage.setItem("wishes", JSON.stringify(wishes));
+  updateJarAndCount();
+  createHeart();
+};
+
+const createHeart = () => {
+  const heart = document.createElement("div");
+  heart.className = "floating-heart";
+  heart.innerHTML = "♥";
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animation = `float ${2 + Math.random() * 1}s ease-in forwards`;
+  
+  const card = document.querySelector(".wishes-grid");
+  if (card) {
+    card.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+  }
+};
+
+wishJarCard.addEventListener("click", addWish);
+
+playlistToggle.addEventListener("click", () => {
+  currentTipIndex = (currentTipIndex + 1) % playlistTips.length;
+  playlistTip.textContent = playlistTips[currentTipIndex];
+});
+
+updateJarAndCount();
