@@ -646,6 +646,10 @@ body {
 .m3 { --tilt: -3deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.2s; }
 .m4 { --tilt: 4deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.3s; }
 .m5 { --tilt: -2deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.4s; }
+.m6 { --tilt: -3deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.5s; }
+.m7 { --tilt: 2deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.6s; }
+.m8 { --tilt: -4deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.7s; }
+.m9 { --tilt: 3deg; animation: polaroidFloat 7s ease-in-out infinite; animation-delay: 0.8s; }
 
 .reveal {
   opacity: 0;
