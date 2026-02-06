@@ -741,6 +741,119 @@ body {
   }
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes softBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes cardHover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+.gallery-section.is-visible .polaroid {
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.gallery-section.is-visible .p1 { animation-delay: 0s; }
+.gallery-section.is-visible .p2 { animation-delay: 0.1s; }
+.gallery-section.is-visible .p3 { animation-delay: 0.2s; }
+.gallery-section.is-visible .p4 { animation-delay: 0.3s; }
+.gallery-section.is-visible .p5 { animation-delay: 0.4s; }
+
+.wishes-section.is-visible .wish-jar-card {
+  animation: slideInLeft 0.7s ease-out;
+}
+
+.wishes-section.is-visible .playlist-card {
+  animation: slideInRight 0.7s ease-out;
+}
+
+.letter-section.is-visible .letter-box {
+  animation: fadeUp 0.8s ease-out;
+}
+
+.memories-section.is-visible .memory-polaroid {
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.memories-section.is-visible .m1 { animation-delay: 0s; }
+.memories-section.is-visible .m2 { animation-delay: 0.1s; }
+.memories-section.is-visible .m3 { animation-delay: 0.2s; }
+.memories-section.is-visible .m4 { animation-delay: 0.3s; }
+
+.section-title {
+  animation: fadeUp 0.6s ease-out;
+}
+
+@media (max-width: 600px) {
+  .gallery-section.is-visible .polaroid {
+    animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .wishes-section.is-visible .wish-jar-card {
+    animation: slideInLeft 0.5s ease-out;
+  }
+
+  .wishes-section.is-visible .playlist-card {
+    animation: slideInRight 0.5s ease-out;
+  }
+
+  .memories-section.is-visible .memory-polaroid {
+    animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
+
 @media (max-width: 900px) {
   .gallery {
     height: auto;
@@ -757,25 +870,167 @@ body {
 }
 
 @media (max-width: 600px) {
+  .page {
+    gap: 80px;
+  }
+
   .hero {
-    padding-top: 100px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    min-height: auto;
+  }
+
+  .hero .tulip-btn {
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 24px;
   }
 
   .timer-card {
     padding: 16px 24px;
+    font-size: 0.9rem;
+    margin-top: 20px;
   }
 
-  .letter-box {
-    padding: 46px 30px 60px;
+  .gallery-section {
+    padding: 0 16px;
+  }
+
+  .gallery {
+    gap: 24px;
   }
 
   .polaroid {
     animation-duration: 9s;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .polaroid img {
+    height: 240px;
+  }
+
+  .wishes-section {
+    padding: 0 16px;
+  }
+
+  .wishes-grid {
+    gap: 20px;
+  }
+
+  .wish-jar-card,
+  .playlist-card {
+    padding: 20px;
+  }
+
+  .jar {
+    width: 140px;
+    height: 170px;
+  }
+
+  .spotify-player {
+    padding: 12px;
+  }
+
+  .spotify-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .spotify-progress {
+    width: 100%;
+  }
+
+  .letter-section {
+    padding: 0 16px 80px;
+  }
+
+  .letter-box {
+    padding: 40px 20px 60px;
+    max-width: 100%;
+  }
+
+  .letter-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .memories-section {
+    padding: 0 12px 80px;
+  }
+
+  .memories-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .memory-polaroid {
+    width: 100%;
+    max-width: 150px;
+    padding: 8px;
+  }
+
+  .memory-polaroid img {
+    height: 160px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
   }
 
   .playlist-btn {
     align-self: stretch;
     text-align: center;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .memories-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .memory-polaroid {
+    max-width: 130px;
+  }
+
+  .memory-polaroid img {
+    height: 140px;
+  }
+
+  .letter-box {
+    padding: 30px 16px 50px;
+  }
+
+  .letter-text {
+    font-size: 0.95rem;
   }
 }
 
