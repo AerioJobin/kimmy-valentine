@@ -78,6 +78,17 @@ body {
   opacity: 0;
 }
 
+.landing-recipient {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--soft-pink);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin-bottom: 35px;
+  animation: fadeInUp 1s ease 0.35s forwards;
+  opacity: 0;
+}
+
 .landing-preview {
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
