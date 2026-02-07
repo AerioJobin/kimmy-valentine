@@ -303,6 +303,7 @@ body {
 .p3 { --tilt: 4deg; animation-delay: 0.4s; }
 .p4 { --tilt: -5deg; animation-delay: 0.8s; }
 .p5 { --tilt: 3deg; animation-delay: 0.5s; }
+.p6 { --tilt: -4deg; animation-delay: 0.3s; }
 
 .wishes-section {
   padding: 0 20px;
