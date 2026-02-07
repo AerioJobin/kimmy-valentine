@@ -120,10 +120,10 @@ const customAudio = document.getElementById("customAudio");
 const playBtn = document.getElementById("playBtn");
 const progressSlider = document.getElementById("progressSlider");
 const currentTimeEl = document.getElementById("currentTime");
-const durationEl = document.getElementById("duration");
+const remainingTimeEl = document.getElementById("remainingTime");
 
-// Start at 2:50 (170 seconds)
-const startTime = 170;
+// Start at 10 seconds
+const startTime = 10;
 
 const formatTime = (seconds) => {
   if (!seconds || !isFinite(seconds)) return "0:00";
@@ -135,12 +135,14 @@ const formatTime = (seconds) => {
 customAudio.addEventListener("loadedmetadata", () => {
   customAudio.currentTime = startTime;
   progressSlider.max = customAudio.duration;
-  durationEl.textContent = formatTime(customAudio.duration);
+  remainingTimeEl.textContent = formatTime(customAudio.duration - startTime);
 });
 
 customAudio.addEventListener("timeupdate", () => {
   progressSlider.value = customAudio.currentTime;
   currentTimeEl.textContent = formatTime(customAudio.currentTime);
+  const remaining = customAudio.duration - customAudio.currentTime;
+  remainingTimeEl.textContent = formatTime(remaining);
 });
 
 playBtn.addEventListener("click", () => {
