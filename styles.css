@@ -89,45 +89,32 @@ body {
   transition: transform 0.5s ease;
 }
 
+.tulip-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
 .tulip-btn:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.9);
   outline-offset: 6px;
 }
 
 .tulip {
-  width: 140px;
-  height: 140px;
+  font-size: 140px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
 }
 
-.petal {
-  fill: var(--soft-pink);
-  opacity: 0.9;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  transform-origin: center;
+.tulip-btn.bloom .tulip {
+  transform: scale(1.05);
+  animation: tulipPulse 0.6s ease;
 }
 
-.stem {
-  stroke: #5aa77c;
-  stroke-width: 6;
-  fill: none;
-  stroke-linecap: round;
-}
-
-.leaf {
-  stroke: #6bb58a;
-  stroke-width: 5;
-  fill: none;
-  stroke-linecap: round;
-}
-
-.tulip-btn:hover {
-  transform: scale(1.05) translateY(-2px);
-}
-
-.tulip-btn.bloom .petal {
-  transform: scale(1.05) translateY(-6px);
-  opacity: 1;
+@keyframes tulipPulse {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.15); }
 }
 
 .audio-hint {
