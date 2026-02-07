@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiet Magic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <audio id="wishlistAudio" src="audio/wishlist.mp3" loop></audio>
+
+  <main class="page">
+    <section class="hero reveal">
+      <button class="tulip-btn" id="tulipBtn" aria-label="Bloom the tulip">
+        <img src="images/tulip_1f337.png" alt="Tulip" class="tulip" />
+      </button>
+      <p class="audio-hint" id="audioHint" role="status" aria-live="polite"></p>
+
+      <h1 class="hero-title">Quiet Magic</h1>
+      <p class="hero-subtitle">For the girl who makes the world stand still.</p>
+
+      <div class="timer-card" id="timerCard">
+        <div class="timer-label">Time since June 30, 2025 · 2:40 AM</div>
+        <div id="timer" class="timer-value">Counting our moments...</div>
+      </div>
+    </section>
+
+    <section class="gallery-section reveal">
+      <h2 class="section-title">Our Favorite Chapters</h2>
+      <p class="gallery-hint">Tap each photo to reveal a little secret 💫</p>
+      <div class="gallery">
+        <figure class="polaroid p1">
+          <div class="polaroid-inner">
+            <div class="polaroid-front">
+              <img src="images/kimmy-01.jpg" alt="I admire the way your mind works." />
+              <figcaption>I admire the way your mind works.</figcaption>
+            </div>
+            <div class="polaroid-back">
+              <p>Your mind is beautiful, the way you think and care means everything to me.</p>
+            </div>
+          </div>
+        </figure>
+        <figure class="polaroid p2">
+          <div class="polaroid-inner">
+            <div class="polaroid-front">
+              <img src="images/kimmy-02.jpg" alt="You are the peace I didn't know I needed." />
+              <figcaption>You are the peace I didn't know I needed.</figcaption>
+            </div>
+            <div class="polaroid-back">
+              <p>With you, my chaotic world becomes calm. You're my sanctuary.</p>
+            </div>
+          </div>
+        </figure>
+        <figure class="polaroid p3">
+          <div class="polaroid-inner">
+            <div class="polaroid-front">
+              <img src="images/kimmy-03 (1).jpg" alt="The prettiest kind of quiet." />
+              <figcaption>The prettiest kind of quiet.</figcaption>
+            </div>
+            <div class="polaroid-back">
+              <p>Silence with you speaks louder than any words ever could.</p>
+            </div>
+          </div>
+        </figure>
+        <figure class="polaroid p4">
+          <div class="polaroid-inner">
+            <div class="polaroid-front">
+              <img src="images/kimmy-03 (2).jpg" alt="My favorite view, always." />
+              <figcaption>My favorite view, always.</figcaption>
+            </div>
+            <div class="polaroid-back">
+              <p>You're the most beautiful thing I get to see every day.</p>
+            </div>
+          </div>
+        </figure>
+        <figure class="polaroid p5">
+          <div class="polaroid-inner">
+            <div class="polaroid-front">
+              <img src="images/kimmy-03 (3).jpg" alt="My favorite kind of quiet." />
+              <figcaption>My favorite kind of quiet.</figcaption>
+            </div>
+            <div class="polaroid-back">
+              <p>In your arms is my favorite place to be, always.</p>
+            </div>
+          </div>
+        </figure>
+        <figure class="polaroid p6">
+          <div class="polaroid-inner">
+            <div class="polaroid-front">
+              <img src="images/IMG_4424.jpg" alt="A cherished moment with you." />
+              <figcaption>A cherished moment with you.</figcaption>
+            </div>
+            <div class="polaroid-back">
+              <p>Every moment I spend with you is one I'll treasure forever.</p>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wishes-section reveal">
+      <h2 class="section-title">Little Wishes</h2>
+      <div class="wishes-grid">
+        <div class="wish-jar-card" id="wishJarCard">
+          <div class="jar">
+            <div class="jar-fill" id="jarFill"></div>
+            <div class="jar-glass"></div>
+          </div>
+          <p class="wish-count"><span id="wishCount">0</span> wishes saved</p>
+          <p class="wish-instruction">Tap anywhere on the card to drop a heart.</p>
+        </div>
+
+        <div class="playlist-card">
+          <p class="playlist-label">Now playing for us</p>
+          <p class="playlist-tip" id="playlistTip">A soft song that feels like your hug.</p>
+          <div class="spotify-player">
+            <div class="spotify-track-info">
+              <div class="spotify-art"><img src="images/kimmy-02.jpg" alt="Wishlist album art" /></div>
+              <div class="spotify-details">
+                <p class="spotify-song">Wishlist</p>
+                <p class="spotify-artist">Taylor Swift</p>
+              </div>
+            </div>
+            <div class="spotify-controls">
+              <audio id="customAudio" src="audio/wishlist.mp3"></audio>
+              <button id="playBtn" class="spotify-btn play-btn">▶</button>
+              <div class="spotify-progress">
+                <span id="currentTime" class="time">0:00</span>
+                <div class="progress-bar">
+                  <input type="range" id="progressSlider" min="0" max="100" value="0">
+                </div>
+                <span id="remainingTime" class="time">0:00</span>
+              </div>
+            </div>
+          </div>
+          <button class="playlist-btn" id="playlistToggle" type="button">Toggle song tip</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section reveal">
+      <div class="letter-box">
+        <div class="letter-flourish" aria-hidden="true"></div>
+        <p class="letter-text">
+Dear Kimmy,
+
+Happy Valentine's Day to the girl who still gives me butterflies every single time I see her.
+
+I wanted to slow down today and really tell you how much you mean to me, because life moves fast and sometimes I forget to say the things I feel every day. It's the little things that stay with me the way your face changes when you're genuinely laughing, how you somehow always know what to say when my day has been heavy, and how even the quiet, do-nothing moments feel special just because they're with you.
+
+You're my best friend, my babi boo, and without a doubt the best part of my day...every day. I don't just love you for who you are; I love who I become when I'm with you. You make me want to grow, while also making me feel like I'm already enough just as I am.
+
+I hope today reminds you, even a little, of how loved and cherished you are not just today, but always. I'm so grateful that I get to hold your hand,to be the one inside you...hehe... laugh with you, and choose you every day.
+
+I love you tons, babi boo.
+Happy Valentine's Day
+        </p>  
+        <span class="to-be-continued"><strong>To be continued...</strong></span>
+        <div class="letter-tulip" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="memories-section reveal">
+      <h2 class="section-title">Back when we were just starting</h2>
+      <div class="memories-gallery">
+        <figure class="memory-polaroid m1">
+          <img src="images/1_(1).jpg" alt="A memory from us" />
+        </figure>
+        <figure class="memory-polaroid m2">
+          <img src="images/1_(2).jpg" alt="A memory from us" />
+        </figure>
+        <figure class="memory-polaroid m3">
+          <img src="images/1_(3).jpg" alt="A memory from us" />
+        </figure>
+        <figure class="memory-polaroid m4">
+          <img src="images/1_(4).jpg" alt="A memory from us" />
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>made with love (and from scratch) by <span class="author">Aerio</span> 💖</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
