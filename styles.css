@@ -28,6 +28,18 @@ body {
   gap: 120px;
 }
 
+@media (max-width: 768px) {
+  .page {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    gap: 60px;
+  }
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -37,6 +49,13 @@ body {
   text-align: center;
   padding: 80px 20px 40px;
   position: relative;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 20px 30px;
+    min-height: auto;
+  }
 }
 
 .hero .tulip-btn,
@@ -103,6 +122,13 @@ body {
   height: 140px;
   display: block;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
+}
+
+@media (max-width: 480px) {
+  .tulip {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .tulip-btn.bloom .tulip {
@@ -172,6 +198,12 @@ body {
   margin-bottom: 40px;
 }
 
+@media (max-width: 480px) {
+  .section-title {
+    margin-bottom: 25px;
+  }
+}
+
 .gallery-hint {
   text-align: center;
   font-size: 0.95rem;
@@ -181,8 +213,21 @@ body {
   letter-spacing: 0.02em;
 }
 
+@media (max-width: 480px) {
+  .gallery-hint {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+}
+
 .gallery-section {
   padding: 0 20px;
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 0 15px;
+  }
 }
 
 .gallery {
@@ -224,6 +269,13 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 480px) {
+  .polaroid {
+    max-width: 220px;
+    height: 300px;
+  }
+}
+
 .polaroid-inner {
   position: relative;
   width: 100%;
@@ -256,6 +308,12 @@ body {
   transform: rotateY(0deg);
 }
 
+@media (max-width: 480px) {
+  .polaroid-front {
+    padding: 12px 12px 36px;
+  }
+}
+
 .polaroid-back {
   background: linear-gradient(135deg, var(--soft-pink), #ff9db5);
   padding: 24px;
@@ -277,6 +335,12 @@ body {
   object-fit: cover;
   border-radius: 4px;
   display: block;
+}
+
+@media (max-width: 480px) {
+  .polaroid img {
+    height: 180px;
+  }
 }
 
 .polaroid figcaption {
@@ -433,6 +497,12 @@ body {
   padding: 16px;
   margin: 8px 0;
   color: white;
+}
+
+@media (max-width: 480px) {
+  .spotify-player {
+    padding: 12px;
+  }
 }
 
 .spotify-track-info {
