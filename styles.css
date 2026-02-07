@@ -201,14 +201,62 @@ body {
 .polaroid {
   position: absolute;
   width: 260px;
-  background: var(--white);
-  padding: 16px 16px 48px;
+  height: 360px;
+  background: transparent;
+  padding: 0;
+  border-radius: 6px;
+  transform-origin: center;
+  animation: polaroidFloat 7s ease-in-out infinite;
+  transition: transform 0.4s ease;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.polaroid-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.polaroid.flipped .polaroid-inner {
+  transform: rotateY(180deg);
+}
+
+.polaroid-front,
+.polaroid-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 6px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-  transform-origin: center;
-  transform: translateY(0) rotate(var(--tilt, 0deg));
-  animation: polaroidFloat 7s ease-in-out infinite;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.polaroid-front {
+  background: var(--white);
+  padding: 16px 16px 48px;
+  transform: rotateY(0deg);
+}
+
+.polaroid-back {
+  background: linear-gradient(135deg, var(--soft-pink), #ff9db5);
+  padding: 24px;
+  transform: rotateY(180deg);
+}
+
+.polaroid-back p {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  text-align: center;
+  color: white;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .polaroid img {
@@ -227,9 +275,8 @@ body {
   color: #5a6d7a;
 }
 
-.polaroid:hover {
+.polaroid:not(.flipped):hover {
   transform: scale(1.08) rotate(0deg) !important;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
 

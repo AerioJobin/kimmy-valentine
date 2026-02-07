@@ -1,4 +1,13 @@
-﻿const tulipBtn = document.getElementById("tulipBtn");
+﻿// Polaroid flip functionality
+const polaroids = document.querySelectorAll(".polaroid");
+polaroids.forEach((polaroid) => {
+  polaroid.addEventListener("click", (e) => {
+    e.preventDefault();
+    polaroid.classList.toggle("flipped");
+  });
+});
+
+const tulipBtn = document.getElementById("tulipBtn");
 const wishlistAudio = document.getElementById("wishlistAudio");
 const timerEl = document.getElementById("timer");
 const audioHint = document.getElementById("audioHint");
