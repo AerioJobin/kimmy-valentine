@@ -22,6 +22,8 @@ body {
   scroll-behavior: smooth;
   position: relative;
   padding: 20px;
+  -webkit-mask-image: radial-gradient(ellipse 95% 95% at 50% 50%, black 0%, black 85%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 95% at 50% 50%, black 0%, black 85%, transparent 100%);
 }
 
 body::before {
